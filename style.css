@@ -1,0 +1,259 @@
+@font-face {
+  font-family: "Roboto-700";
+  src: url(/assets/fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Roboto-400";
+  src: url(/assets/fonts/Roboto-Regular.ttf);
+}
+
+/* CSS Reset */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Default Color Scheme */
+
+:root {
+  /* Primary Color */
+  --prm-red: #ff6257;
+  /* Neutral Color */
+  --neu-blue-800: hsl(234, 29%, 20%);
+  --neu-blue-700: hsl(235, 18%, 26%);
+  --neu-gray: hsl(0, 0%, 58%);
+  --neu-white: hsl(0, 0%, 100%);
+}
+
+/* General Styles */
+
+body {
+  font-family: "Roboto-400", sans-serif;
+  background-color: var(--neu-blue-700);
+}
+
+#sign-up-form {
+  height: 100vh;
+  background-color: var(--neu-white);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-img-container {
+  background-image: url(/assets/images/illustration-sign-up-mobile.svg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 17rem;
+  width: 100%;
+  border-end-end-radius: 15px;
+  border-end-start-radius: 15px;
+}
+
+.form-description-container {
+  width: 100%;
+  padding: 2.2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form-description-title {
+  font-family: "Roboto-700", sans-serif;
+  color: var(--neu-blue-800);
+  font-size: 2.5rem;
+}
+
+ul {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+li {
+  display: flex;
+  align-items: self-start;
+  justify-content: start;
+  gap: 1rem;
+}
+
+.email-header-container {
+  margin-top: 1rem;
+  margin-bottom: -0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.lbl-email {
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.email-error-message {
+  display: none;
+  color: var(--prm-red);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.show {
+  display: flex;
+}
+
+#email {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--neu-gray);
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
+}
+
+.error-input {
+  background-color: #faccc8 !important;
+  color: var(--prm-red) !important  ;
+  border: 1px solid var(--prm-red) !important;
+}
+
+#btn-submit {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  background-color: var(--neu-blue-800);
+  color: var(--neu-white);
+  transition: all linear 250ms;
+}
+
+#btn-submit:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 98, 87, 1) 0%,
+    rgba(255, 151, 53, 1) 100%
+  );
+  box-shadow: 0px 5px 10px -3px #ff6257;
+}
+
+.alert-success {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+  }
+
+  #sign-up-form {
+    height: auto;
+    padding: 1rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .form-img-container {
+    background-image: url(/assets/images/illustration-sign-up-desktop.svg);
+    background-size: cover;
+    background-position: center center;
+    border-radius: 15px;
+    height: auto;
+    width: 23rem;
+  }
+
+  .email-header-container {
+    margin-bottom: -0.5rem;
+  }
+
+  .form-description-container {
+    max-width: 30rem;
+    padding: 3rem 2.5rem;
+    margin-right: 1.2rem;
+  }
+}
